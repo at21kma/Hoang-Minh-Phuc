@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+void tim_maxMin(int *a,int n,int *max,int *i1,int *min,int *i2)
+{
+    *max=a[0];
+    *min=a[0];
+    *i1=0;
+    *i2=0;
+    for(int i=0;i<n;i++){
+        if(a[i]>*max){
+            *max=a[i];
+            *i1=i;
+        }
+        if(a[i]<*min){
+
+            *min=a[i];
+            *i2=i;
+        }
+
+    }
+
+
+}
+int main()
+{
+    int n;
+    printf("Nhap vao so phan tu cua mang: \n");
+    scanf("%d",&n);
+    int *a=(int*)malloc(n*sizeof(int));
+    printf("Nhap cac phan tu cua mang: \n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",a+i);
+    }
+    int max,min,i1,i2;
+    tim_maxMin(a,n,&max,&i1,&min,&i2);
+    printf("Phan tu lon nhat trong mang la %d o vi tri %d\n",max,i1);
+    printf("Phan tu be nhat trong mang la %d o vi tri %d\n",min,i2);
+
+
+
+    return 0;
+}
