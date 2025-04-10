@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+double giaiThua(int n)
+{
+    double gt=1;
+    for(int i=1;i<=n;i++){
+        gt*=i;
+    }
+    return gt;
+}
+int main()
+{
+    double x,eps;
+    printf("Nhap vao so x: \n");
+    scanf("%lf",&x);
+    printf("Nhap vao eps: \n");
+    scanf("%lf",&eps);
+
+    double a=(3.14*x)/180;
+    double sin=0;
+    int i=0;
+    double n=0;
+    do
+    {
+        double gt=giaiThua(2*i+1);
+        n=pow(-1,i)*(pow(a,2*i+1)/gt);
+        sin+=n;
+        i++;
+    }
+    while(fabs(n)>eps);
+    printf("sin(%lf) = %lf",x,sin);
+    return 0;
+}
