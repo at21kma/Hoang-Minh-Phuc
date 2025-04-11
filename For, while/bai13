@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 double tinh(double x, double eps) {
-    double E = 1.0;
+    double E = 1;
     double a=1;
     int n = 1;
 
