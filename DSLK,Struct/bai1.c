@@ -15,7 +15,7 @@ void nhapThongTinCuaDonHang(SP *a)
     printf("Nhap vao ten cua san pham: \n");
     getchar();
     fgets(a->ten,10000,stdin);
-    a->ten[strcspn(a->ten, "\n")] = 0;
+    a->ten[strcspn(a->ten, "\n")] = '\0';
     printf("Nhap vao gia cua san pham: \n");
     scanf("%d",&a->gia);
     printf("Nhap vao so luong san pham: \n");
